@@ -8,6 +8,7 @@ pod 'OneSignal'
 pod 'Firebase/Firestore'
 pod 'Google-Mobile-Ads-SDK'
 pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 
   # Pods for nBoxApp
 

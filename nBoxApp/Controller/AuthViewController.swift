@@ -8,8 +8,15 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class AuthViewController: UIViewController {
+    
+    var userIsLogIn = false {
+        didSet {
+            changeScreen()
+        }
+    }
 
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
@@ -17,7 +24,19 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+    }
+    
+    
+    func changeScreen() {
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+            print("Timer:  \(timer)")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "News")
+            
+            self.present(vc, animated: true, completion: nil)
+        }
+        
     }
     
     private func setupLayout() {
@@ -67,5 +86,21 @@ class AuthViewController: UIViewController {
         
     }
     
+    func firebaseLogin(auth : AuthCredential) {
+        Auth.auth().signIn(with: auth) { (result, error) in
+            if error != nil {
+                print("Error : \(error?.localizedDescription ?? "Error !" )")
+            }
+            else {
+                
+            }
+        }
+    }
+    
+    @IBAction func GIDSignInButtonClicked(_ sender: Any) {
+        
+        GIDSignIn.sharedInstance().signIn()
+        
+    }
     
 }

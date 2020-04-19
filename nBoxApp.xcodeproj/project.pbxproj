@@ -22,6 +22,9 @@
 		E52FECD324463FC200FCBA47 /* nBoxAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FECD224463FC200FCBA47 /* nBoxAppUITests.swift */; };
 		E52FECEA2446459E00FCBA47 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FECE92446459E00FCBA47 /* NotificationService.swift */; };
 		E52FECEE2446459E00FCBA47 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E52FECE72446459E00FCBA47 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E5AD66C92448F2DF00EF0EFC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AD66C82448F2DF00EF0EFC /* AVFoundation.framework */; };
+		E5AD66CB2449064000EF0EFC /* SiriTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD66CA2449064000EF0EFC /* SiriTestViewController.swift */; };
+		E5DE898124465C1E008D7A40 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE898024465C1E008D7A40 /* Extensions.swift */; };
 		E5EF8F7224464DB1004665D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5EF8F7124464DB1004665D5 /* GoogleService-Info.plist */; };
 		E5EF8F7424465272004665D5 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EF8F7324465272004665D5 /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
@@ -96,6 +99,9 @@
 		E52FECE72446459E00FCBA47 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52FECE92446459E00FCBA47 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		E52FECEB2446459E00FCBA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5AD66C82448F2DF00EF0EFC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E5AD66CA2449064000EF0EFC /* SiriTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriTestViewController.swift; sourceTree = "<group>"; };
+		E5DE898024465C1E008D7A40 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E5EF8F7124464DB1004665D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E5EF8F7324465272004665D5 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5AD66C92448F2DF00EF0EFC /* AVFoundation.framework in Frameworks */,
 				135FDA1293C76FFCEAD4F117 /* Pods_nBoxApp_App_nBoxApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +146,7 @@
 		1A1192E4DFAE5C25B493307C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5AD66C82448F2DF00EF0EFC /* AVFoundation.framework */,
 				BAA7A6DAF082CD578B60A752 /* Pods_nBoxApp_App_OneSignalNotificationServiceExtension.framework */,
 				4DA325409DF3F65C2D3CE181 /* Pods_nBoxApp_App_nBoxApp.framework */,
 				8A3DBE98EA1C565B40DD80F7 /* Pods_nBoxApp_App_nBoxApp_nBoxAppUITests.framework */,
@@ -189,6 +197,7 @@
 		E52FECAC24463FC000FCBA47 /* nBoxApp */ = {
 			isa = PBXGroup;
 			children = (
+				E5DE897F24465C0B008D7A40 /* Utilities */,
 				E51877FF244647F200A2F8FA /* nBoxApp.entitlements */,
 				E52FECE024463FD100FCBA47 /* Model */,
 				E52FECE124463FD800FCBA47 /* View */,
@@ -242,6 +251,7 @@
 			children = (
 				E52FECB124463FC000FCBA47 /* ViewController.swift */,
 				E5EF8F7324465272004665D5 /* AuthViewController.swift */,
+				E5AD66CA2449064000EF0EFC /* SiriTestViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -253,6 +263,14 @@
 				E52FECEB2446459E00FCBA47 /* Info.plist */,
 			);
 			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		E5DE897F24465C0B008D7A40 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E5DE898024465C1E008D7A40 /* Extensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +286,7 @@
 				E52FECA824463FC000FCBA47 /* Resources */,
 				E52FECF22446459E00FCBA47 /* Embed App Extensions */,
 				3B3825CC1EA5ED3758B4DC77 /* [CP] Embed Pods Frameworks */,
+				65312DF7A06523CC5EFF8059 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,6 +326,7 @@
 				E52FECCB24463FC200FCBA47 /* Frameworks */,
 				E52FECCC24463FC200FCBA47 /* Resources */,
 				57E43C1BF8FCE76F8ED81D6D /* [CP] Embed Pods Frameworks */,
+				26DDC039EC0A099381AB7082 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -463,6 +483,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		26DDC039EC0A099381AB7082 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-nBoxApp App-nBoxApp-nBoxAppUITests/Pods-nBoxApp App-nBoxApp-nBoxAppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-nBoxApp App-nBoxApp-nBoxAppUITests/Pods-nBoxApp App-nBoxApp-nBoxAppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nBoxApp App-nBoxApp-nBoxAppUITests/Pods-nBoxApp App-nBoxApp-nBoxAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3B3825CC1EA5ED3758B4DC77 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,6 +556,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		65312DF7A06523CC5EFF8059 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-nBoxApp App-nBoxApp/Pods-nBoxApp App-nBoxApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-nBoxApp App-nBoxApp/Pods-nBoxApp App-nBoxApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nBoxApp App-nBoxApp/Pods-nBoxApp App-nBoxApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9DF2586E6E3ECA10EC199F00 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -549,6 +603,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E52FECB824463FC000FCBA47 /* nBoxApp.xcdatamodeld in Sources */,
+				E5DE898124465C1E008D7A40 /* Extensions.swift in Sources */,
+				E5AD66CB2449064000EF0EFC /* SiriTestViewController.swift in Sources */,
 				E52FECB224463FC000FCBA47 /* ViewController.swift in Sources */,
 				E5EF8F7424465272004665D5 /* AuthViewController.swift in Sources */,
 				E52FECAE24463FC000FCBA47 /* AppDelegate.swift in Sources */,

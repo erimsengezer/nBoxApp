@@ -11,12 +11,12 @@ import CoreData
 import OneSignal
 import Firebase
 import GoogleMobileAds
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -42,8 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
+
+        
         return true
     }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 

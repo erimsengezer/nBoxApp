@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
@@ -21,6 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("Current user email : \(Auth.auth().currentUser?.uid ?? "No User")")
         
         let userID = Auth.auth().currentUser?.uid
+        
+        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+        
+        GIDSignIn.sharedInstance()?.delegate = self
         
         if userID != nil {
             print("Current user email : Full")
@@ -41,6 +46,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            else {
+                print("Giriş Başarılı ! ")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "News")
+                
+    //            vc.userIsLogIn = true
+                self.window?.rootViewController = vc
+                
+            }
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "Auth") as! AuthViewController
+            
+            guard let authentication = user.authentication else { return }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            
+            vc.firebaseLogin(auth: credential )
+            
+            
+        }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
