@@ -64,13 +64,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, GIDSignInDelegate {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "Auth") as! AuthViewController
             
-            guard let authentication = user.authentication else { return }
-            
-            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-            
-            vc.firebaseLogin(auth: credential )
-            
-            
+            if user != nil {
+                
+                guard let authentication = user.authentication else { return }
+                
+                let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+                
+                vc.firebaseLogin(auth: credential )
+                
+            }
         }
 
     func sceneDidDisconnect(_ scene: UIScene) {

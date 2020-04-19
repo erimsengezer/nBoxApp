@@ -60,12 +60,31 @@ class AuthViewController: UIViewController {
     private func createUser() {
         Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!) { (result, error) in
             if error != nil {
+                var errorText = error?.localizedDescription
+
                 
-                let alert = UIAlertController(title: "Error", message: "Error", preferredStyle: UIAlertController.Style.alert)
-                let okButton = UIAlertAction(title: "OKAY !", style: UIAlertAction.Style.cancel, handler: nil)
-                alert.addAction(okButton)
-                self.present(alert, animated: true, completion: nil)
+                // Create an English-Turkish translator:
+                let options = TranslatorOptions(sourceLanguage: .en, targetLanguage: .tr)
+                let englishTurkishTranslator = NaturalLanguage.naturalLanguage().translator(options: options)
                 
+                englishTurkishTranslator.downloadModelIfNeeded { (error) in
+                    guard error == nil else { return }
+                    englishTurkishTranslator.translate(errorText ?? "Unexpected Error" ) { (translateText, error) in
+                        if error != nil {
+                            print("\(error?.localizedDescription ?? "Error")")
+                        }
+                        else {
+                            if let text = translateText {
+                                errorText = text
+                                print("ErrorText : \(errorText ?? "error")")
+                                let alert = UIAlertController(title: "Bir Hata Oluştu", message: "\(errorText ?? "Unexpected error")", preferredStyle: UIAlertController.Style.alert)
+                                let okButton = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.cancel, handler: nil)
+                                alert.addAction(okButton)
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                }
             }
             else {
                 print(result!)

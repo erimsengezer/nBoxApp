@@ -9,7 +9,7 @@ pod 'Firebase/Firestore'
 pod 'Google-Mobile-Ads-SDK'
 pod 'Firebase/Auth'
 pod 'GoogleSignIn'
-
+pod 'Firebase/MLNLTranslate'
   # Pods for nBoxApp
 
   target 'nBoxAppTests' do
