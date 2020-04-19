@@ -31,7 +31,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, AVSpeechSynthes
         loadAds()
         
         Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
-            self.showAds()
+//            self.showAds()
         }
         
         speechSynthesizer.delegate = self
@@ -67,12 +67,6 @@ class ViewController: UIViewController, GADInterstitialDelegate, AVSpeechSynthes
     }
 
     @IBAction func readButtonClicked(_ sender: Any) {
-        if readButtonCount == 0 {
-            readButtonCount = 0
-        }
-        else {
-            readButtonCount += 1
-        }
         
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: "\(textView.text ?? "Okuyamıyorum")")
         speechUtterance.rate = AVSpeechUtteranceMaximumSpeechRate / 2.0
@@ -87,6 +81,7 @@ class ViewController: UIViewController, GADInterstitialDelegate, AVSpeechSynthes
             speechSynthesizer.pauseSpeaking(at: .immediate)
             readButton.setTitle("Read", for: .normal)
         }
+        readButtonCount += 1
     }
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
