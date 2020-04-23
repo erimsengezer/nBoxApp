@@ -11,10 +11,11 @@ import Firebase
 import GoogleMobileAds
 import AVFoundation
 import GoogleSignIn
-
+import FBSDKLoginKit
 class ViewController: UIViewController, GADInterstitialDelegate, AVSpeechSynthesizerDelegate {
     
     let speechSynthesizer = AVSpeechSynthesizer()
+    let fbManager = FBSDKLoginManager()
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var label: UILabel!
@@ -29,6 +30,13 @@ class ViewController: UIViewController, GADInterstitialDelegate, AVSpeechSynthes
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-9394312041468898/9609702768")
         interstitial.delegate = self
         loadAds()
+        
+        print("ProviderID : \(String(describing: Auth.auth().currentUser?.providerID)) \(String(describing: Auth.auth().currentUser?.displayName))")
+        print("ProviderID : \(String(describing: Auth.auth().currentUser?.email))")
+        
+        for user in Auth.auth().currentUser!.providerData {
+            print("ProviderID : \(user.providerID)")
+        }
         
         Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
 //            self.showAds()
@@ -117,6 +125,18 @@ class ViewController: UIViewController, GADInterstitialDelegate, AVSpeechSynthes
         case GoogleAuthProviderID:
             GIDSignIn.sharedInstance().signOut()
             break
+        
+        case FacebookAuthProviderID:
+            fbManager.logOut()
+        
+        case EmailAuthProviderID:
+            do {
+                try Auth.auth().signOut()
+            }
+            catch {
+                print("\(error.localizedDescription)")
+            }
+            
         default:
             return
         }

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-
+import FBSDKLoginKit
 class AuthViewController: UIViewController {
     
     var userIsLogIn = false {
@@ -21,10 +21,13 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         GIDSignIn.sharedInstance()?.presentingViewController = self
+        facebookLoginButton.delegate = self
+        facebookLoginButton.readPermissions = ["email"]
     }
     
     
@@ -123,3 +126,27 @@ class AuthViewController: UIViewController {
     }
     
 }
+
+extension AuthViewController : FBSDKLoginButtonDelegate {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+        if let error = error {
+            showAlert(message: "Facebook ile giriş yapılırken bir hata meydana geldi. \n \(error.localizedDescription)")
+        }
+        else if result.isCancelled {
+            showAlert(message: "Facebook ile girişi iptal ettiniz.")
+        }
+        
+        let crediantal = FacebookAuthProvider.credential(withAccessToken: result.token.tokenString)
+        firebaseLogin(auth: crediantal)
+        
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
+    
+}
+
+

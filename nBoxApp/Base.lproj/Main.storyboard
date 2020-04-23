@@ -143,12 +143,21 @@
                                     <action selector="GIDSignInButtonClicked:" destination="BDI-Yc-S4N" eventType="valueChanged" id="uWg-Ze-oM2"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1d-sc-euo" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="20" y="774" width="374" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="GIDSignInButtonClicked:" destination="BDI-Yc-S4N" eventType="valueChanged" id="BpD-yA-hke"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1SM-gK-s70"/>
                     </view>
                     <connections>
                         <outlet property="emailText" destination="TfW-Th-Ir1" id="OdS-uf-KFa"/>
+                        <outlet property="facebookLoginButton" destination="B1d-sc-euo" id="ogg-6T-zBR"/>
                         <outlet property="passwordText" destination="hPN-Rn-XhU" id="xu6-hM-PQF"/>
                         <outlet property="signUpButton" destination="Kwi-jv-CFb" id="3hC-pa-Kvp"/>
                     </connections>
