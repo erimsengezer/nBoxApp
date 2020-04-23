@@ -12,6 +12,7 @@ import OneSignal
 import Firebase
 import GoogleMobileAds
 import GoogleSignIn
+import FacebookCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,8 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //START OneSignal initialization code
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-
-        // Replace 'YOUR_APP_ID' with your OneSignal App ID.
+        
         OneSignal.initWithLaunchOptions(launchOptions,
         appId: "9d04279c-7c24-4bfe-92bb-c0621b13261c",
         handleNotificationAction: nil,
@@ -42,9 +42,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
-
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
+    }
+    
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        guard let google = GIDSignIn.sharedInstance()?.handle(url) else { return false }
+        
+        let facebook = SDKApplicationDelegate.shared.application(app, open: url, options: options)
+        
+        return google || facebook
+        
     }
     
     

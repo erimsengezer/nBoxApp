@@ -10,6 +10,12 @@ pod 'Google-Mobile-Ads-SDK'
 pod 'Firebase/Auth'
 pod 'GoogleSignIn'
 pod 'Firebase/MLNLTranslate'
+
+pod 'FBSDKCoreKit', '4.36.0'
+pod 'FBSDKLoginKit', '4.36.0'
+pod 'FacebookCore', '0.4'
+pod 'FacebookLogin', '0.4'
+
   # Pods for nBoxApp
 
   target 'nBoxAppTests' do
