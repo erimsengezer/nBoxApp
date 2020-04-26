@@ -16,7 +16,6 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Haberler"
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -27,7 +26,7 @@ class NewsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.topItem?.title = choosenCategory
-        print("didappear")
+
     }
 
     override func viewWillAppear(_ animated: Bool) {

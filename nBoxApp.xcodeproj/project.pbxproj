@@ -22,6 +22,8 @@
 		E52FECD324463FC200FCBA47 /* nBoxAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FECD224463FC200FCBA47 /* nBoxAppUITests.swift */; };
 		E52FECEA2446459E00FCBA47 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FECE92446459E00FCBA47 /* NotificationService.swift */; };
 		E52FECEE2446459E00FCBA47 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E52FECE72446459E00FCBA47 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E5444A852456361200761A9C /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5444A842456361200761A9C /* TrendsViewController.swift */; };
+		E564981D2456301600A54057 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564981C2456301600A54057 /* TabBarController.swift */; };
 		E58D81F12454BA7800E14361 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D81F02454BA7800E14361 /* NewsViewController.swift */; };
 		E58D81F32454D51700E14361 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D81F22454D51700E14361 /* NewsCell.swift */; };
 		E59AF95E24524A9A003C4505 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59AF95D24524A9A003C4505 /* CategoryViewController.swift */; };
@@ -102,6 +104,8 @@
 		E52FECE72446459E00FCBA47 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52FECE92446459E00FCBA47 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		E52FECEB2446459E00FCBA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5444A842456361200761A9C /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
+		E564981C2456301600A54057 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E58D81F02454BA7800E14361 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		E58D81F22454D51700E14361 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		E59AF95D24524A9A003C4505 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -256,11 +260,13 @@
 		E52FECE224463FDC00FCBA47 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E564981C2456301600A54057 /* TabBarController.swift */,
 				E52FECB124463FC000FCBA47 /* ViewController.swift */,
 				E5EF8F7324465272004665D5 /* AuthViewController.swift */,
 				E5AD66CA2449064000EF0EFC /* SiriTestViewController.swift */,
 				E59AF95D24524A9A003C4505 /* CategoryViewController.swift */,
 				E58D81F02454BA7800E14361 /* NewsViewController.swift */,
+				E5444A842456361200761A9C /* TrendsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -611,8 +617,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5444A852456361200761A9C /* TrendsViewController.swift in Sources */,
 				E52FECB824463FC000FCBA47 /* nBoxApp.xcdatamodeld in Sources */,
 				E5DE898124465C1E008D7A40 /* Extensions.swift in Sources */,
+				E564981D2456301600A54057 /* TabBarController.swift in Sources */,
 				E5AD66CB2449064000EF0EFC /* SiriTestViewController.swift in Sources */,
 				E52FECB224463FC000FCBA47 /* ViewController.swift in Sources */,
 				E58D81F32454D51700E14361 /* NewsCell.swift in Sources */,
