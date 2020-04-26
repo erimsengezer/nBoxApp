@@ -83,6 +83,7 @@ class AuthViewController: UIViewController {
                                 let alert = UIAlertController(title: "Bir Hata Oluştu", message: "\(errorText ?? "Unexpected error")", preferredStyle: UIAlertController.Style.alert)
                                 let okButton = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.cancel, handler: nil)
                                 alert.addAction(okButton)
+                                
                                 self.present(alert, animated: true, completion: nil)
                             }
                         }
@@ -91,6 +92,7 @@ class AuthViewController: UIViewController {
             }
             else {
                 print(result!)
+                self.postUser()
             }
         }
     }
@@ -108,13 +110,29 @@ class AuthViewController: UIViewController {
         
     }
     
+    
+    func postUser() {
+        let firestore = Firestore.firestore()
+        
+        let email = Auth.auth().currentUser?.email
+        
+        firestore.collection("Users").document(Auth.auth().currentUser!.uid).setData(["email" : email!]) { (error) in
+            if error != nil {
+                print("Kayıt hatası : \(error!.localizedDescription)")
+            }
+            else {
+                print("Kayıt Başarılı")
+            }
+        }
+    }
+    
     func firebaseLogin(auth : AuthCredential) {
         Auth.auth().signIn(with: auth) { (result, error) in
             if error != nil {
                 print("Error : \(error?.localizedDescription ?? "Error !" )")
             }
             else {
-                
+                self.postUser()
             }
         }
     }

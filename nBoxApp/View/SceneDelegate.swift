@@ -27,22 +27,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance()?.delegate = self
         
-        if userID != nil {
-            print("Current user email : Full")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "News")
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-        }
-        else {
-            print("Current user email : Empty")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Auth")
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-        }
+//        if userID != nil {
+//            print("Current user email : Full")
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "News")
+//            self.window?.rootViewController = initialViewController
+//            self.window?.makeKeyAndVisible()
+//        }
+//        else {
+//            print("Current user email : Empty")
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//            let initialViewController = storyboard.instantiateViewController(withIdentifier: "Auth")
+//            self.window?.rootViewController = initialViewController
+//            self.window?.makeKeyAndVisible()
+//        }
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }

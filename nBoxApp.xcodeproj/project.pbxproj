@@ -22,6 +22,9 @@
 		E52FECD324463FC200FCBA47 /* nBoxAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FECD224463FC200FCBA47 /* nBoxAppUITests.swift */; };
 		E52FECEA2446459E00FCBA47 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52FECE92446459E00FCBA47 /* NotificationService.swift */; };
 		E52FECEE2446459E00FCBA47 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E52FECE72446459E00FCBA47 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E58D81F12454BA7800E14361 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D81F02454BA7800E14361 /* NewsViewController.swift */; };
+		E58D81F32454D51700E14361 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D81F22454D51700E14361 /* NewsCell.swift */; };
+		E59AF95E24524A9A003C4505 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59AF95D24524A9A003C4505 /* CategoryViewController.swift */; };
 		E5AD66C92448F2DF00EF0EFC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AD66C82448F2DF00EF0EFC /* AVFoundation.framework */; };
 		E5AD66CB2449064000EF0EFC /* SiriTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD66CA2449064000EF0EFC /* SiriTestViewController.swift */; };
 		E5DE898124465C1E008D7A40 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE898024465C1E008D7A40 /* Extensions.swift */; };
@@ -99,6 +102,9 @@
 		E52FECE72446459E00FCBA47 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52FECE92446459E00FCBA47 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		E52FECEB2446459E00FCBA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E58D81F02454BA7800E14361 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		E58D81F22454D51700E14361 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		E59AF95D24524A9A003C4505 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E5AD66C82448F2DF00EF0EFC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E5AD66CA2449064000EF0EFC /* SiriTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriTestViewController.swift; sourceTree = "<group>"; };
 		E5DE898024465C1E008D7A40 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				E52FECAF24463FC000FCBA47 /* SceneDelegate.swift */,
+				E58D81F22454D51700E14361 /* NewsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +259,8 @@
 				E52FECB124463FC000FCBA47 /* ViewController.swift */,
 				E5EF8F7324465272004665D5 /* AuthViewController.swift */,
 				E5AD66CA2449064000EF0EFC /* SiriTestViewController.swift */,
+				E59AF95D24524A9A003C4505 /* CategoryViewController.swift */,
+				E58D81F02454BA7800E14361 /* NewsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -606,7 +615,10 @@
 				E5DE898124465C1E008D7A40 /* Extensions.swift in Sources */,
 				E5AD66CB2449064000EF0EFC /* SiriTestViewController.swift in Sources */,
 				E52FECB224463FC000FCBA47 /* ViewController.swift in Sources */,
+				E58D81F32454D51700E14361 /* NewsCell.swift in Sources */,
+				E59AF95E24524A9A003C4505 /* CategoryViewController.swift in Sources */,
 				E5EF8F7424465272004665D5 /* AuthViewController.swift in Sources */,
+				E58D81F12454BA7800E14361 /* NewsViewController.swift in Sources */,
 				E52FECAE24463FC000FCBA47 /* AppDelegate.swift in Sources */,
 				E52FECB024463FC000FCBA47 /* SceneDelegate.swift in Sources */,
 			);
