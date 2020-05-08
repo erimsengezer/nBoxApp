@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct NewsModel {
+    var title : String
+    var content : String
+    var description : String
+    
+    init(title: String, description: String, content: String) {
+        
+        self.title = title
+        self.content = content
+        self.description = description
+    }
+}

@@ -44,6 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        
+        let networkManager = NetworkManager.getSharedInstance()
+        
+        networkManager?.sendGetData(collection: "News")
+        
+        
+        
+        
         return true
     }
     

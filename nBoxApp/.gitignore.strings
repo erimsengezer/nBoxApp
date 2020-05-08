@@ -1,7 +1,26 @@
-/* 
-  .gitignore.strings
-  nBoxApp
 
-  Created by Erim Şengezer on 9.05.2020.
-  Copyright © 2020 Erim Şengezer. All rights reserved.
-*/
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+
+*.dSYM.zip
+
+Pods/
+infer-out/
+
+.DS_Store

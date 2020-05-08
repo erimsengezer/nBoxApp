@@ -14,13 +14,16 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var closeLabel: UILabel!
     @IBOutlet weak var selectButton: UIButton!
     
+    var networkManager : NetworkManager!
     let categories = ["Tümü", "Dünya", "Sosyal Medya", "Otomobil", "Teknoloji", "Siyaset", "Sağlık", "Spor"]
     
     var selectedCategory = ""
+    var titleArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        networkManager = NetworkManager.getSharedInstance()
+
         closeLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeAction))
         closeLabel.addGestureRecognizer(tapGesture)
@@ -29,6 +32,17 @@ class CategoryViewController: UIViewController {
         pickerView.delegate = self
         pickerView.dataSource = self
         setupLayout()
+        
+        print("Count: \(self.networkManager.newsArray.count)")
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+            print("Count: \(self.networkManager.newsArray.count)")
+            for news in self.networkManager.newsArray {
+                self.titleArray.append(news.title)
+            }
+            DispatchQueue.main.async {
+                print("Count: \(self.titleArray.last ?? "BOŞ")")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
